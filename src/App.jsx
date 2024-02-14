@@ -127,7 +127,7 @@ function App() {
       <div id='habilidades' className='p-6 flex justify-center'>
         <div className=' text-white pt-16 w-[60rem]'>
           <h2 className='text-5xl pb-3'>Habilidades</h2>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1210 ? ' transform transition duration-1000' : 'translate-x-[-85rem] duration-1000'}`}>
+          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1210 ? ' transform transition duration-1000' : 'translate-x-[-15rem] duration-1000'}`}>
             {frontEnd.map((imagen, index) => (
               <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                 <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
@@ -135,7 +135,7 @@ function App() {
               </div>
             ))}
           </div>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1310 ? ' transform transition duration-1000' : 'translate-x-[85rem] duration-1000'}`}>
+          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1310 ? ' transform transition duration-1000' : 'translate-x-[15rem] duration-1000'}`}>
             {backAndData.map((imagen, index) => (
               <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                 <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
@@ -143,7 +143,7 @@ function App() {
               </div>
             ))}
           </div>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1410 ? ' transform transition duration-1000' : 'translate-x-[-85rem] duration-1000'}`}>
+          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1410 ? ' transform transition duration-1000' : 'translate-x-[-15rem] duration-1000'}`}>
             {otherTech.map((imagen, index) => (
               <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                 <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
