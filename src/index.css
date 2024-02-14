@@ -72,3 +72,18 @@ button:focus-visible {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@keyframes expandirContraer {
+  0% {
+    transform: scale(1); /* Escala inicial: elemento original */
+  }
+  100% {
+    transform: scale(1.2); /* Escala final: elemento al 120% de su tamaño aumentado */
+  }
+}
+
+.expand-animation {
+  animation: expandirContraer 2s infinite alternate; /* Nombre de la animación, duración, repetición infinita y dirección alternada */
+}

@@ -17,6 +17,9 @@ export default {
     fontFamily: {
       'josefin': ['Josefin Sans'],
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 }
