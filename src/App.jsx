@@ -1,47 +1,11 @@
 import { useEffect, useState } from 'react'
-import perfil from './assets/perfil.jpg'
 import './App.css'
-import css from './assets/css.png'
-import git from './assets/git.png'
-import html from './assets/html.png'
-import javaScript from './assets/javascript.png'
-import react from './assets/react.png'
-import postgre from './assets/postgresql.png'
-import mysql from './assets/mysql.png'
-import php from './assets/php.png'
-import node from './assets/node-js.png'
-import photoshop from './assets/photoshop.png'
-import github from './assets/github.png'
-import redux from './assets/redux.png'
-import tailwind from './assets/tailwind.png'
-import Wordpress from './assets/wordpress.png'
+import perfil from './assets/perfil.jpg'
+import { backAndData, contacts, frontEnd, otherTech } from './Data/Data'
 
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  const frontEnd = [
-    { techno: css, titulo: 'CSS3' },
-    { techno: html, titulo: 'HTML5' },
-    { techno: javaScript, titulo: 'JavaScript' },
-    { techno: tailwind, titulo: 'Tailwind.css' },
-    { techno: react, titulo: 'React.js' },
-    { techno: redux, titulo: 'Redux' },
-  ];
-  const backAndData = [
-    { techno: node, titulo: 'Node.js' },
-    { techno: php, titulo: 'PHP' },
-    { techno: postgre, titulo: 'PostgreSQL' },
-    { techno: mysql, titulo: 'MySQL' },
-
-  ];
-  const otherTech = [
-    { techno: Wordpress, titulo: 'WordPress' },
-    { techno: photoshop, titulo: 'Photoshop' },
-    { techno: git, titulo: 'Git' },
-    { techno: github, titulo: 'Github' },
-  ];
-  
+function App() {  
+ 
   const [valorScroll, setValorScroll] = useState(0); // Estado para almacenar el valor de scroll
 
   useEffect(() => {
@@ -69,7 +33,7 @@ function App() {
         </div>
         <div className=' text-white flex justify-between w-[35rem] pt-4'>
           <a href='' className=' cursor-pointer'>Acerca de Mí</a>
-          <a href='' className=' cursor-pointer'>Habilidades</a>
+          <a href='' className=' cursor-pointer'>Técnologias</a>
           <a href='' className=' cursor-pointer'>Proyectos</a>
           <a href='' className=' cursor-pointer'>Contactos</a>
         </div>
@@ -126,7 +90,7 @@ function App() {
       </div>
       <div id='habilidades' className='p-6 flex justify-center'>
         <div className=' text-white pt-16 w-[60rem]'>
-          <h2 className='text-5xl pb-3'>Habilidades</h2>
+          <h2 className='text-5xl pb-3'>Técnologias</h2>
           <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1210 ? ' opacity-100 transform transition duration-1000' : ' opacity-0 translate-x-[-12rem] duration-1000'}`}>
             {frontEnd.map((imagen, index) => (
               <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
@@ -159,10 +123,20 @@ function App() {
           
         </div>
       </div>
-      <div id='contacto' className='p-6 flex justify-center'>
+      <div id='contacto' className='p-6 flex justify-center mt-6 pb-28'>
         <div className='w-[60rem]'>
-          <h2 className='text-5xl pb-3 text-white'>Contactos</h2>
-          <form action="" className='text-white'>
+          <h2 className='text-5xl pb-7 text-white'>Contactos</h2>
+          <div className='text-white grid grid-cols-3 bg-gray-600 py-12 rounded-b-xl'>
+          {contacts.map((cont, index) => (
+              <div className='flex justify-center'>
+              <div className='w-11 flex flex-col justify-center items-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300'>
+                <img src={cont.medios} alt="" className='rounded-[25rem] w-11 h-11'/>
+                <p className='mt-1'>{cont.titulo}</p>
+              </div>
+              </div>
+          ))}
+          </div>
+          {/* <form action="" className='text-white'>
             <div className=' text-left p-4 grid grid-cols-2 '>
               <div className="">
                 <label className="ml-4">
@@ -215,7 +189,7 @@ function App() {
                 Enviar
               </button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
