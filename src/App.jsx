@@ -2,11 +2,39 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import perfil from './assets/perfil.jpg'
 import { backAndData, contacts, frontEnd, otherTech } from './Data/Data'
-
+import Carrusel from './Carrusel/Carrusel'
+import { ochoBits } from './Data/Projects'
+import video from './assets/Demo-8-Bits-Proyecto-bootcamp-Henry.mp4'
+import { Link } from 'react-router-dom';
 
 function App() {  
- 
+
   const [valorScroll, setValorScroll] = useState(0); // Estado para almacenar el valor de scroll
+  const [valorMouse, setValorMouse] = useState({});
+  const [valorClic, setValorClic] = useState({});
+
+
+  const handleClick = (event, id) => {
+    event.preventDefault();
+
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+  const deslizadorMouse = (index, value) => {
+    setValorMouse({
+      [index]: value
+    });
+  };
+
+  const botonClicVideo = (index, value) => {
+    setValorClic({
+      [index]: value
+    });
+  }
 
   useEffect(() => {
     // Función de manejo del evento de desplazamiento
@@ -23,8 +51,24 @@ function App() {
     };
   }, []); // La matriz vacía de dependencias garantiza que el efecto se ejecute solo una vez al montar el componente
   
-  console.log("este es el scroll: ", valorScroll);
- 
+  const proyect = [
+    {
+      description: 'Proyecto: 8bits. Este proyecto fue creado en conjunto con mis compañeros del bootcamp de Henry. En él, tuve la oportunidad de realizar parte del front-end, tales como el componente del carrito, las bases del componente home, el paginado y la búsqueda por filtros, haciendo uso de tecnologías como Redux, Axios y localStorage.',
+      images: ochoBits,
+      botonVideo: video,
+    },
+    // {
+    //   description: 'Proyecto: 8bits. Este proyecto fue creado en conjunto con mis compañeros del bootcamp de Henry. En él, tuve la oportunidad de realizar parte del front-end, tales como el componente del carrito, las bases del componente home, el paginado y la búsqueda por filtros, haciendo uso de tecnologías como Redux, Axios y localStorage.',
+    //   images: ochoBits,
+    //   botonVideo: 'https://youtu.be/rtqPIOXaSdI?si=n9whlHWefQnqeW1k',
+    // },
+    // {
+    //   description: 'Proyecto: 8bits. Este proyecto fue creado en conjunto con mis compañeros del bootcamp de Henry. En él, tuve la oportunidad de realizar parte del front-end, tales como el componente del carrito, las bases del componente home, el paginado y la búsqueda por filtros, haciendo uso de tecnologías como Redux, Axios y localStorage.',
+    //   images: ochoBits,
+    //   botonVideo: video,
+    // }
+  ]
+  
   return (
     <div className='bg-stone-800 min-h-[1760px] font-josefin'>
       <div id='header' className='h-24 border-b-2 border-white flex justify-around items-center'>
@@ -32,10 +76,10 @@ function App() {
           <h1 className='text-white text-5xl text-left'>Alejandro Tarico</h1>
         </div>
         <div className=' text-white flex justify-between w-[35rem] pt-4'>
-          <a href='' className=' cursor-pointer'>Acerca de Mí</a>
-          <a href='' className=' cursor-pointer'>Técnologias</a>
-          <a href='' className=' cursor-pointer'>Proyectos</a>
-          <a href='' className=' cursor-pointer'>Contactos</a>
+        <a href="#about" onClick={(e) => handleClick(e, 'about')} className="cursor-pointer">Acerca de Mí</a>
+        <a href="#habilidades" onClick={(e) => handleClick(e, 'habilidades')} className="cursor-pointer">Tecnologías</a>
+        <a href="#proyectos" onClick={(e) => handleClick(e, 'proyectos')} className="cursor-pointer">Proyectos</a>
+        <a href="#contacto" onClick={(e) => handleClick(e, 'contacto')} className="cursor-pointer">Contactos</a>
         </div>
       </div>
       <div id='portada' className=''>
@@ -43,10 +87,10 @@ function App() {
         
         <div className='flex justify-evenly items-center translate-y-[-438px] absolute w-full'>
           <div id='cuadroText' className='mt-24'>
-            <div className={`p-4 w-max rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 30 ? ' transform transition duration-700' : 'translate-x-[-40rem] duration-700'}`}>
+            <div className={`p-4 w-max rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-40rem] duration-700'}`}>
               <p className='text-white font-bold text-4xl'>Desarrollador Full Stack</p>
             </div>
-            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 110 ? ' transform transition duration-700' : 'translate-x-[-45rem] duration-700'}`}>
+            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 100 ? ' transform transition duration-700' : 'translate-x-[-45rem] duration-700'}`}>
               <p className='text-white '>
               Desarrollador Full Stack con enfoque en el diseño front-end, utilizando tecnologías como 
               React para crear interfaces de usuario dinámicas e interactivas. Además de WordPress y su 
@@ -118,15 +162,59 @@ function App() {
         </div>
       </div>
       <div id='proyectos' className='p-6 flex justify-center'>
-        <div className='w-[60rem]'>
-          <h2 className='text-5xl pb-3 text-white'>Proyectos</h2>
-          
+        <div className='w-[60rem] text-white'>
+          <h2 className='text-5xl pb-9 text-white'>Proyectos</h2>
+          <div className={`grid gap-x-5 ${proyect.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} `}>
+            {proyect.map((proj, index) => (
+              <div key={index}>
+                <p className='text-justify mb-5'>
+                  {proj.description}
+                </p>
+                <div className='relative group' onMouseEnter={() => deslizadorMouse(index, true)} onMouseLeave={() => deslizadorMouse(index, false)}>
+                  <Carrusel images={proj.images}/>
+                  <div className='absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-50 transition-opacity duration-300'></div>
+                    <div className='absolute inset-0 flex justify-center items-center'>
+                    {valorMouse[index] && (
+                      <div className=''>
+                        <button onClick={() => botonClicVideo(index, true)} className={`cursor-pointer
+                        shadow-red-400 shadow-[2px_3px_2px_1px] p-3 w-max 
+                        rounded-xl transition ease-in-out delay-150 
+                        bg-red-600 hover:scale-110 hover:bg-red-800 
+                        duration-150 `} >VIDEO DEMO</button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+              </div>
+            ))}
+          </div>
+          {proyect.map((proj, index) => (
+            <div key={index} className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+              {valorClic[index] && (
+                <div className=' '>
+                  <div className='flex justify-end w-[36rem]'>
+                    <video controls src={proj.botonVideo} type="video/mp4"/>
+                    <div className={`absolute transition-opacity duration-1000 ease-in-out ${valorClic[index] ? 'opacity-100' : ''}`}>
+                      <button className='hover:scale-110 duration-300 py-1 px-3 mt-3 rounded-full' onClick={() => botonClicVideo(index, false)}>
+                        <svg class="h-8 w-8 text-red-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                          <path stroke="none" d="M0 0h24v24H0z"/>  
+                          <rect x="4" y="4" width="16" height="16" rx="2" />  
+                          <path d="M10 10l4 4m0 -4l-4 4" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )} 
+            </div>
+          ))}  
         </div>
       </div>
       <div id='contacto' className='p-6 flex justify-center mt-6 pb-28'>
-        <div className='w-[60rem]'>
+        <div className='w-[61rem]'>
           <h2 className='text-5xl pb-7 text-white'>Contactos</h2>
-          <div className='text-white grid grid-cols-3 bg-gray-600 py-12 rounded-b-xl'>
+          <div className='text-white grid grid-cols-3 bg-red-900 py-12 rounded-b-xl'>
           {contacts.map((cont, index) => (
               <div className='flex justify-center'>
               <div className='w-11 flex flex-col justify-center items-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300'>
