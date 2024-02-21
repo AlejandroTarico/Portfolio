@@ -42,7 +42,7 @@ export const otherTech = [
 ];
 
 export const contacts = [
-    { medios: correo, titulo: 'Correo', link: 'yo.alejo.at@gmail.com'},
-    { medios: linkedin, titulo: 'LinkedIn', link: 'www.linkedin.com/in/alejandro-tarico-4935b5232/'},
-    { medios: github1, titulo: 'Github', link: 'github.com/AlejandroTarico'}
+    { medios: correo, titulo: 'Correo', link: 'mailto:yo.alejo.at@gmail.com'},
+    { medios: linkedin, titulo: 'LinkedIn', link: 'https://www.linkedin.com/in/alejandro-tarico-4935b5232/'},
+    { medios: github1, titulo: 'Github', link: 'https://github.com/AlejandroTarico'}
 ]

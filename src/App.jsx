@@ -5,7 +5,6 @@ import { backAndData, contacts, frontEnd, otherTech } from './Data/Data'
 import Carrusel from './Carrusel/Carrusel'
 import { ochoBits } from './Data/Projects'
 import video from './assets/Demo-8-Bits-Proyecto-bootcamp-Henry.mp4'
-import { Link } from 'react-router-dom';
 
 function App() {  
 
@@ -216,12 +215,14 @@ function App() {
           <h2 className='text-5xl pb-7 text-white'>Contactos</h2>
           <div className='text-white grid grid-cols-3 bg-red-900 py-12 rounded-b-xl'>
           {contacts.map((cont, index) => (
-              <div className='flex justify-center'>
-              <div className='w-11 flex flex-col justify-center items-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300'>
-                <img src={cont.medios} alt="" className='rounded-[25rem] w-11 h-11'/>
-                <p className='mt-1'>{cont.titulo}</p>
-              </div>
-              </div>
+            <div key={index} className='flex justify-center'>
+              <a href={cont.link} target="_blank">
+                <div className='w-11 flex flex-col justify-center items-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300'>
+                  <img src={cont.medios} alt="" className='rounded-[25rem] w-11 h-11'/>
+                  <p className='mt-1'>{cont.titulo}</p>
+                </div>
+              </a>
+            </div>
           ))}
           </div>
           {/* <form action="" className='text-white'>
