@@ -70,18 +70,20 @@ function App() {
   
   return (
     <div className='bg-stone-800 min-h-[1760px] font-josefin'>
-      <div id='header' className='h-24 border-b-2 border-white flex justify-around items-center'>
-        <div>
-          <h1 className='text-white text-5xl text-left'>Alejandro Tarico</h1>
-        </div>
-        <div className=' text-white flex justify-between w-[35rem] pt-4'>
-        <a href="#about" onClick={(e) => handleClick(e, 'about')} className="cursor-pointer">Acerca de Mí</a>
-        <a href="#habilidades" onClick={(e) => handleClick(e, 'habilidades')} className="cursor-pointer">Tecnologías</a>
-        <a href="#proyectos" onClick={(e) => handleClick(e, 'proyectos')} className="cursor-pointer">Proyectos</a>
-        <a href="#contacto" onClick={(e) => handleClick(e, 'contacto')} className="cursor-pointer">Contactos</a>
+      <div id='header' className='flex justify-around items-center'>
+        <div className='bg-stone-800 opacity-90 h-20 border-b-2 border-white flex justify-around items-center w-full fixed z-50 top-0 '>
+          <div>
+            <h1 className='text-white text-5xl text-left'>Alejandro Tarico</h1>
+          </div>
+          <div className=' text-white flex justify-between w-[35rem] pt-4'>
+            <a href="#about" onClick={(e) => handleClick(e, 'about')} className="cursor-pointer">Acerca de Mí</a>
+            <a href="#habilidades" onClick={(e) => handleClick(e, 'habilidades')} className="cursor-pointer">Tecnologías</a>
+            <a href="#proyectos" onClick={(e) => handleClick(e, 'proyectos')} className="cursor-pointer">Proyectos</a>
+            <a href="#contacto" onClick={(e) => handleClick(e, 'contacto')} className="cursor-pointer">Contactos</a>
+          </div>
         </div>
       </div>
-      <div id='portada' className=''>
+      {/* <div id='portada' className='mt-20'>
         <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
         
         <div className='flex justify-evenly items-center translate-y-[-438px] absolute w-full'>
@@ -101,7 +103,7 @@ function App() {
             <img className='w-[22rem] ml-3 mt-6 rounded-full shadow-[10px_10px_5px_0px_rgba(0,0,0,0.75)] border-solid border-4 border-blue-700' src={perfil} alt="" />
           </div>
         </div>      
-      </div>
+      </div> */}
       <div id='about' className='p-6 mt-5 flex justify-center'>
         <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-16 px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
           <h2 className='text-5xl pb-3 '>Sobre mi</h2>
