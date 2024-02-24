@@ -117,7 +117,7 @@ function App() {
           <img className='inline border-b-4 border-gray-50 h-[740px]' src={responsive} alt="" />
         </div>
         
-        <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-830px] absolute w-full '>
+        <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-700px] absolute w-full '>
           <div id='cuadroText' className='md:mt-24 mt-12 order-2 md:order-1 w-[80%] md:w-auto'>
             <div className={`p-4 rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
               <p className='text-white font-bold text-xl md:text-4xl'>Desarrollador Full Stack</p>
@@ -136,7 +136,7 @@ function App() {
         </div>
       </div>
       <div id='about' className='p-6 md:mt-5 mt-3 flex justify-center'>
-        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-8 md:pt-16 px-7 md:px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
+        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-8 md:pt-16 px-6 md:px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
           <h2 className='text-3xl md:text-5xl pb-3'>Sobre mi</h2>
           <hr/>
           <div className='md:mt-4 mt-2 text-lg text-justify italic'>
