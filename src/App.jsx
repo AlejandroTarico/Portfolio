@@ -99,7 +99,7 @@ function App() {
 
         </div>
         {isOpen && (
-        <div className="md:hidden z-50 fixed top-[60px] right-[25px] rounded-tl-xl rounded-br-xl bg-gray-700 px-3">
+        <div className="md:hidden z-50 fixed top-[60px] right-[20px] rounded-tl-xl rounded-br-xl bg-gray-700 px-3">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
             <a href="#about" onClick={(e) => {handleClick(e, 'about'); toggleMenu()}} className="font-bold block px-3 py-2  text-base text-white">Acerca de Mi</a>
             <a href="#habilidades" onClick={(e) => {handleClick(e, 'habilidades'); toggleMenu()}} className="font-bold block px-3 py-2text-base text-white ">Tecnologías</a>
@@ -109,7 +109,7 @@ function App() {
         </div>
       )}
       </div>
-      <div id='portada' className='mt-20 '>
+      <div id='portada' className='mt-40 md:mt-20'>
         <div className='hidden md:block'>
           <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
         </div>
