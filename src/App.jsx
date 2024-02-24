@@ -5,12 +5,18 @@ import { backAndData, contacts, frontEnd, otherTech } from './Data/Data'
 import Carrusel from './Carrusel/Carrusel'
 import { ochoBits } from './Data/Projects'
 import video from './assets/Demo-8-Bits-Proyecto-bootcamp-Henry.mp4'
+import responsive from './assets/Responsive.png'
 
 function App() {  
 
   const [valorScroll, setValorScroll] = useState(0); // Estado para almacenar el valor de scroll
   const [valorMouse, setValorMouse] = useState({});
   const [valorClic, setValorClic] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
 
   const handleClick = (event, id) => {
@@ -73,25 +79,50 @@ function App() {
       <div id='header' className='flex justify-around items-center'>
         <div className='bg-stone-800 opacity-90 h-20 border-b-2 border-white flex justify-around items-center w-full fixed z-50 top-0 '>
           <div>
-            <h1 className='text-white text-5xl text-left'>Alejandro Tarico</h1>
+            <h1 className='text-white text-3xl md:text-5xl text-left'>Alejandro Tarico</h1>
           </div>
-          <div className=' text-white flex justify-between w-[35rem] pt-4'>
-            <a href="#about" onClick={(e) => handleClick(e, 'about')} className="cursor-pointer">Acerca de Mí</a>
-            <a href="#habilidades" onClick={(e) => handleClick(e, 'habilidades')} className="cursor-pointer">Tecnologías</a>
-            <a href="#proyectos" onClick={(e) => handleClick(e, 'proyectos')} className="cursor-pointer">Proyectos</a>
-            <a href="#contacto" onClick={(e) => handleClick(e, 'contacto')} className="cursor-pointer">Contactos</a>
-          </div>
-        </div>
-      </div>
-      {/* <div id='portada' className='mt-20'>
-        <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
-        
-        <div className='flex justify-evenly items-center translate-y-[-438px] absolute w-full'>
-          <div id='cuadroText' className='mt-24'>
-            <div className={`p-4 w-max rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-40rem] duration-700'}`}>
-              <p className='text-white font-bold text-4xl'>Desarrollador Full Stack</p>
+          <div className='hidden md:block'>
+            <div className=' text-white flex justify-between w-[35rem] pt-4'>
+              <a href="#about" onClick={(e) => handleClick(e, 'about')} className="cursor-pointer">Acerca de Mí</a>
+              <a href="#habilidades" onClick={(e) => handleClick(e, 'habilidades')} className="cursor-pointer">Tecnologías</a>
+              <a href="#proyectos" onClick={(e) => handleClick(e, 'proyectos')} className="cursor-pointer">Proyectos</a>
+              <a href="#contacto" onClick={(e) => handleClick(e, 'contacto')} className="cursor-pointer">Contactos</a>
             </div>
-            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 100 ? ' transform transition duration-700' : 'translate-x-[-45rem] duration-700'}`}>
+          </div>
+          <div className="-mr-2 flex md:hidden">
+            <button onClick={() => toggleMenu()} className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:bg-gray-700 text-white">
+              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+        {isOpen && (
+        <div className="md:hidden z-50 fixed top-[60px] right-[30px] rounded-tl-xl rounded-br-xl bg-gray-700">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#about" onClick={(e) => {handleClick(e, 'about'); toggleMenu()}} className="block px-3 py-2 rounded-md text-base font-medium text-white">Acerca de Mi</a>
+            <a href="#habilidades" onClick={(e) => {handleClick(e, 'habilidades'); toggleMenu()}} className="block px-3 py-2 rounded-md text-base font-medium text-white ">Tecnologías</a>
+            <a href="#proyectos" onClick={(e) => {handleClick(e, 'proyectos'); toggleMenu()}} className="block px-3 py-2 rounded-md text-base font-medium text-white ">Proyecctos</a>
+            <a href="#contacto" onClick={(e) => {handleClick(e, 'contacto'); toggleMenu()}} className="block px-3 py-2 rounded-md text-base font-medium text-white ">Contactos</a>
+          </div> 
+        </div>
+      )}
+      </div>
+      <div id='portada' className='mt-20 '>
+        <div className='hidden md:block'>
+          <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
+        </div>
+        <div className='md:hidden'>
+          <img className='inline border-b-4 border-gray-50' src={responsive} alt="" />
+        </div>
+        
+        <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-535px] absolute w-full '>
+          <div id='cuadroText' className='md:mt-24 mt-12 order-2 md:order-1 w-[80%] md:w-auto'>
+            <div className={`p-4 rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
+              <p className='text-white font-bold text-xl md:text-4xl'>Desarrollador Full Stack</p>
+            </div>
+            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 100 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
               <p className='text-white '>
               Desarrollador Full Stack con enfoque en el diseño front-end, utilizando tecnologías como 
               React para crear interfaces de usuario dinámicas e interactivas. Además de WordPress y su 
@@ -99,16 +130,16 @@ function App() {
               </p>
             </div>
           </div>
-          <div id='fotoPerfil' className='skew-y-6 -skew-x-6 bg-[blueviolet] opacity-85 rounded-full shadow-lg shadow-white w-[400px] h-[400px] '>
-            <img className='w-[22rem] ml-3 mt-6 rounded-full shadow-[10px_10px_5px_0px_rgba(0,0,0,0.75)] border-solid border-4 border-blue-700' src={perfil} alt="" />
+          <div id='fotoPerfil' className='order-1 md:order-2 skew-y-6 -skew-x-6 bg-[blueviolet]  rounded-full shadow-lg shadow-white '>
+            <img className='w-[12rem] md:w-[22rem] ml-2 mt-4 mb-3 mr-7 rounded-full shadow-[10px_10px_5px_0px_rgba(0,0,0,0.75)] border-solid border-4 border-blue-700' src={perfil} alt="" />
           </div>
-        </div>      
-      </div> */}
-      <div id='about' className='p-6 mt-5 flex justify-center'>
-        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-16 px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
-          <h2 className='text-5xl pb-3 '>Sobre mi</h2>
-          <hr />
-          <div className='mt-4 text-lg text-justify italic'>
+        </div>
+      </div>
+      <div id='about' className='p-6 md:mt-5 mt-3 flex justify-center'>
+        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-8 md:pt-16 px-6 md:px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
+          <h2 className='text-3xl md:text-5xl pb-3'>Sobre mi</h2>
+          <hr/>
+          <div className='md:mt-4 mt-2 text-lg text-justify italic'>
             <p className='pb-2'>
             ¡Hola! Permítanme presentarme, soy Alejandro Tarico, un apasionado de la programación. 
             Como Full Stack Developer, me he desafiado constantemente, trabajando en diversos proyectos que 
@@ -133,8 +164,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div id='habilidades' className='p-6 flex justify-center'>
-        <div className=' text-white pt-16 w-[60rem]'>
+      <div id='habilidades' className='p-6 flex justify-center bg-lime-600 h-56'>
+        {/* <div className=' text-white pt-16 w-[60rem]'>
           <h2 className='text-5xl pb-3'>Técnologias</h2>
           <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1210 ? ' opacity-100 transform transition duration-1000' : ' opacity-0 translate-x-[-12rem] duration-1000'}`}>
             {frontEnd.map((imagen, index) => (
@@ -160,10 +191,10 @@ function App() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
-      <div id='proyectos' className='p-6 flex justify-center'>
-        <div className='w-[60rem] text-white'>
+      <div id='proyectos' className='p-6 flex justify-center bg-teal-600 h-56'>
+        {/* <div className='w-[60rem] text-white'>
           <h2 className='text-5xl pb-9 text-white'>Proyectos</h2>
           <div className={`grid gap-x-5 ${proyect.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} `}>
             {proyect.map((proj, index) => (
@@ -210,10 +241,10 @@ function App() {
               )} 
             </div>
           ))}  
-        </div>
+        </div> */}
       </div>
       <div id='contacto' className='p-6 flex justify-center mt-6 pb-28'>
-        <div className='w-[61rem]'>
+        {/* <div className='w-[61rem]'>
           <h2 className='text-5xl pb-7 text-white'>Contactos</h2>
           <div className='text-white grid grid-cols-3 bg-red-900 py-12 rounded-b-xl'>
           {contacts.map((cont, index) => (
@@ -226,7 +257,7 @@ function App() {
               </a>
             </div>
           ))}
-          </div>
+          </div> */}
           {/* <form action="" className='text-white'>
             <div className=' text-left p-4 grid grid-cols-2 '>
               <div className="">
@@ -281,7 +312,7 @@ function App() {
               </button>
             </div>
           </form> */}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   )
