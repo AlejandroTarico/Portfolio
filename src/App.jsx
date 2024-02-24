@@ -114,7 +114,7 @@ function App() {
           <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
         </div>
         <div className='md:hidden'>
-          <img className='inline border-b-4 border-gray-50' src={responsive} alt="" />
+          <img className='inline border-b-4 border-gray-50 h-[900px]' src={responsive} alt="" />
         </div>
         
         <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-438px] absolute w-full '>
