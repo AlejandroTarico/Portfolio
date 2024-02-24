@@ -109,7 +109,7 @@ function App() {
         </div>
       )}
       </div>
-      <div id='portada' className='mt-40 md:mt-20'>
+      <div id='portada' className='mt-20'>
         <div className='hidden md:block'>
           <img className='inline border-b-4 border-gray-50' src='https://i.blogs.es/016f69/developers/1366_521.jpg' alt="" />
         </div>
@@ -117,7 +117,7 @@ function App() {
           <img className='inline border-b-4 border-gray-50' src={responsive} alt="" />
         </div>
         
-        <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-535px] absolute w-full '>
+        <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-438px] absolute w-full '>
           <div id='cuadroText' className='md:mt-24 mt-12 order-2 md:order-1 w-[80%] md:w-auto'>
             <div className={`p-4 rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
               <p className='text-white font-bold text-xl md:text-4xl'>Desarrollador Full Stack</p>
