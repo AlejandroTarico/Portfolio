@@ -119,10 +119,10 @@ function App() {
         
         <div className='flex flex-col md:flex-row justify-evenly items-center md:translate-y-[-438px] translate-y-[-600px] absolute w-full '>
           <div id='cuadroText' className='md:mt-24 mt-12 order-2 md:order-1 w-[80%] md:w-auto'>
-            <div className={`p-4 rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 20 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
+            <div className={`p-4 rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 0 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
               <p className='text-white font-bold text-xl md:text-4xl'>Desarrollador Full Stack</p>
             </div>
-            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 100 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
+            <div className={`mt-4 p-4 max-w-[35rem] rounded-tl-xl rounded-br-xl transform bg-neutral-800 ${valorScroll > 40 ? ' transform transition duration-700' : 'translate-x-[-44rem] duration-700'}`}>
               <p className='text-white '>
               Desarrollador Full Stack con enfoque en el diseño front-end, utilizando tecnologías como 
               React para crear interfaces de usuario dinámicas e interactivas. Además de WordPress y su 
