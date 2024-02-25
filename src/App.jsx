@@ -165,7 +165,7 @@ function App() {
         </div>
       </div>
       <div id='habilidades' className='p-6 flex justify-center'>
-        <div className=' text-white pt-16 w-[90%] md:w-[60rem]'>
+        <div className=' text-white pt-8 w-[90%] md:w-[60rem]'>
           <h2 className='text-5xl pb-3'>Técnologias</h2>
           <div className='overflow-hidden'>
             <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1300ms] ${valorScroll > 1240 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
@@ -197,11 +197,11 @@ function App() {
       </div>
       <div id='proyectos' className='p-6 flex justify-center'>
         <div className='w-[60rem] text-white'>
-          <h2 className='text-5xl pb-9 text-white'>Proyectos</h2>
-          <div className={`grid gap-x-5 ${proyect.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} `}>
+          <h2 className='text-5xl pb-1 text-white'>Proyectos</h2>
+          <div className={`grid gap-x-5 ${proyect.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} `}>
             {proyect.map((proj, index) => (
-              <div key={index}>
-                <p className='text-justify mb-5'>
+              <div key={index} className=''>
+                <p className='text-justify mb-5 mt-8'>
                   {proj.description}
                 </p>
                 <div className='relative group' onMouseEnter={() => deslizadorMouse(index, true)} onMouseLeave={() => deslizadorMouse(index, false)}>
@@ -219,7 +219,9 @@ function App() {
                     )}
                   </div>
                 </div>
-                
+                <div className='mt-4 md:hidden'>
+                  <p className='italic'>NOTA: Si deseas ver más, puedes hacer clic en la imagen para ver un video demo o el código del proyecto</p>
+                </div>
               </div>
             ))}
           </div>
