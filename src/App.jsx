@@ -136,7 +136,7 @@ function App() {
         </div>
       </div>
       <div id='about' className='p-6 md:mt-5 mt-3 flex justify-center'>
-        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-8 md:pt-16 px-6 md:px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
+        <div className={`border-white shadow-white shadow-[8px_5px_11px_-1px_rgba(255,255,255)]  border-4 w-[54rem] text-white pt-8 md:pt-16 px-5 md:px-16 pb-10 rounded-2xl ${valorScroll > 280 ? ' opacity-100 duration-1000':'translate-y-[15rem] opacity-0 duration-700'}`}>
           <h2 className='text-3xl md:text-5xl pb-3'>Sobre mi</h2>
           <hr/>
           <div className='md:mt-4 mt-2 text-lg text-justify italic'>
@@ -164,37 +164,39 @@ function App() {
           </div>
         </div>
       </div>
-      <div id='habilidades' className='p-6 flex justify-center bg-lime-600 h-56'>
-        {/* <div className=' text-white pt-16 w-[60rem]'>
+      <div id='habilidades' className='p-6 flex justify-center'>
+        <div className=' text-white pt-16 w-[90%] md:w-[60rem]'>
           <h2 className='text-5xl pb-3'>Técnologias</h2>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1210 ? ' opacity-100 transform transition duration-1000' : ' opacity-0 translate-x-[-12rem] duration-1000'}`}>
-            {frontEnd.map((imagen, index) => (
-              <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
-                <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
-                <p className='mt-2'>{imagen.titulo}</p>
-              </div>
-            ))}
+          <div className='overflow-hidden'>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1100ms] ${valorScroll > 1210 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
+              {frontEnd.map((imagen, index) => (
+                <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
+                  <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
+                  <p className='mt-2'>{imagen.titulo}</p>
+                </div>
+              ))}
+            </div>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform transition duration-[1100ms] ${valorScroll > 1310 ? ' opacity-100 -translate-x-0' : 'translate-x-full opacity-0'}`}>
+              {backAndData.map((imagen, index) => (
+                <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
+                  <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
+                  <p className='mt-2'>{imagen.titulo}</p>
+                </div>
+              ))}
+            </div>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1100ms] ${valorScroll > 1410 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
+              {otherTech.map((imagen, index) => (
+                <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
+                  <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
+                  <p className='mt-2'>{imagen.titulo}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1310 ? ' opacity-100 transform transition duration-1000' : ' opacity-0 translate-x-[12rem] duration-1000'}`}>
-            {backAndData.map((imagen, index) => (
-              <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
-                <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
-                <p className='mt-2'>{imagen.titulo}</p>
-              </div>
-            ))}
-          </div>
-          <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl ${valorScroll > 1410 ? ' opacity-100 transform transition duration-1000' : ' opacity-0 translate-x-[-12rem] duration-1000'}`}>
-            {otherTech.map((imagen, index) => (
-              <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
-                <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
-                <p className='mt-2'>{imagen.titulo}</p>
-              </div>
-            ))}
-          </div>
-        </div> */}
+        </div>
       </div>
-      <div id='proyectos' className='p-6 flex justify-center bg-teal-600 h-56'>
-        {/* <div className='w-[60rem] text-white'>
+      <div id='proyectos' className='p-6 flex justify-center'>
+        <div className='w-[60rem] text-white'>
           <h2 className='text-5xl pb-9 text-white'>Proyectos</h2>
           <div className={`grid gap-x-5 ${proyect.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} `}>
             {proyect.map((proj, index) => (
@@ -225,7 +227,7 @@ function App() {
             <div key={index} className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
               {valorClic[index] && (
                 <div className=' '>
-                  <div className='flex justify-end w-[36rem]'>
+                  <div className='flex justify-end w-80 md:w-[36rem]'>
                     <video controls src={proj.botonVideo} type="video/mp4"/>
                     <div className={`absolute transition-opacity duration-1000 ease-in-out ${valorClic[index] ? 'opacity-100' : ''}`}>
                       <button className='hover:scale-110 duration-300 py-1 px-3 mt-3 rounded-full' onClick={() => botonClicVideo(index, false)}>
@@ -240,8 +242,8 @@ function App() {
                 </div>
               )} 
             </div>
-          ))}  
-        </div> */}
+          ))}
+        </div>
       </div>
       <div id='contacto' className='p-6 flex justify-center mt-6 pb-28'>
         {/* <div className='w-[61rem]'>
