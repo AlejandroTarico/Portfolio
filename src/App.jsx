@@ -168,7 +168,7 @@ function App() {
         <div className=' text-white pt-16 w-[90%] md:w-[60rem]'>
           <h2 className='text-5xl pb-3'>Técnologias</h2>
           <div className='overflow-hidden'>
-            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1100ms] ${valorScroll > 1210 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1300ms] ${valorScroll > 1240 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
               {frontEnd.map((imagen, index) => (
                 <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                   <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
@@ -176,7 +176,7 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform transition duration-[1100ms] ${valorScroll > 1310 ? ' opacity-100 -translate-x-0' : 'translate-x-full opacity-0'}`}>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform transition duration-[1300ms] ${valorScroll > 1340 ? ' opacity-100 -translate-x-0' : 'translate-x-full opacity-0'}`}>
               {backAndData.map((imagen, index) => (
                 <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                   <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
@@ -184,7 +184,7 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1100ms] ${valorScroll > 1410 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
+            <div className={`grid grid-cols-3 py-3 bg-red-900 mt-5 rounded-xl transform -translate-x-full transition duration-[1300ms] ${valorScroll > 1440 ? ' opacity-100 translate-x-0' : ' opacity-0'}`}>
               {otherTech.map((imagen, index) => (
                 <div key={index} className='flex flex-col justify-center items-center pt-4 pb-3'>
                   <img src={imagen.techno} alt={imagen.titulo} className='expand-animation'/>
@@ -246,7 +246,7 @@ function App() {
         </div>
       </div>
       <div id='contacto' className='p-6 flex justify-center mt-6 pb-28'>
-        {/* <div className='w-[61rem]'>
+        <div className='w-[61rem]'>
           <h2 className='text-5xl pb-7 text-white'>Contactos</h2>
           <div className='text-white grid grid-cols-3 bg-red-900 py-12 rounded-b-xl'>
           {contacts.map((cont, index) => (
@@ -259,7 +259,7 @@ function App() {
               </a>
             </div>
           ))}
-          </div> */}
+          </div>
           {/* <form action="" className='text-white'>
             <div className=' text-left p-4 grid grid-cols-2 '>
               <div className="">
@@ -314,7 +314,7 @@ function App() {
               </button>
             </div>
           </form> */}
-        {/* </div> */}
+        </div>
       </div>
     </div>
   )
