@@ -318,7 +318,7 @@ function App() {
           </form> */}
         </div>
       </div>
-      <a href="https://web.whatsapp.com/send?phone=+5492645242999" target='blank'>
+      <a href="https://wa.me/+5492645242999" target='blank'>
         <div className='bottom-3 right-3 max-w-16 flex fixed justify-end animate-bounce'>
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
             <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path>
